@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Fiesta - Reservation Management</title>
+    <link rel="stylesheet" href="style.css">
+    
+    </head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="brand-header">
+                <h1>FOODIE Fiesta</h1>
+                <p>Reservations Management</p>
+            </div>
+
+            <div class="metrics-container">
+                <div class="metric-card highlight">
+                    <h3>Today's Reservation</h3>
+                    <div class="metric-value">
+                        <span class="icon">📅</span> 
+                        <h2>12 Guests</h2>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Pending Reservations</h3>
+                    <div class="metric-value">
+                        <span class="icon">😶</span> 
+                        <h2>12</h2>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Upcoming Reservations</h3>
+                    <div class="metric-value">
+                        <span class="icon">✔️</span> 
+                        <h2>24</h2>
+                    </div>
+                </div>
+
+                <div class="metric-card next-reservation">
+                    <h3>Next Reservation</h3>
+                    <div class="metric-value">
+                        <span class="icon">👥</span> 
+                        <p>6:30 PM | 2 Guest</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Reservations</h2>
+                <button class="btn-add-reservation">+ Add Reservation</button>
+            </header>
+
+            <nav class="status-tabs">
+                <button class="tab" data-target="content-all">All</button>
+                <button class="tab active" data-target="content-pending">Pending</button>
+                <button class="tab" data-target="content-upcoming">Upcoming</button>
+                <button class="tab" data-target="content-seated">Seated</button>
+                <button class="tab" data-target="content-completed">Completed</button>
+                <button class="tab" data-target="content-cancelled">Cancelled</button>
+            </nav>
+
+            <section class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Guest</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="content-pending" class="tab-content active">
+                        <tr>
+                            <td>Juan Dela Cruz</td>
+                            <td>Apr 25, 2026</td>
+                            <td>5:30 PM</td>
+                            <td>4 Guest</td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Maria Santos</td>
+                            <td>Apr 25, 2026</td>
+                            <td>6:00 PM</td>
+                            <td>2 Guest</td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody id="content-upcoming" class="tab-content">
+                        <tr>
+                            <td>Alex Reyes</td>
+                            <td>Apr 26, 2026</td>
+                            <td>7:00 PM</td>
+                            <td>6 Guest</td>
+                            <td><span class="badge upcoming">Upcoming</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody id="content-seated" class="tab-content">
+                        <tr>
+                            <td>Kevin Ramirez</td>
+                            <td>Apr 25, 2026</td>
+                            <td>4:00 PM</td>
+                            <td>5 Guest</td>
+                            <td><span class="badge seated">Seated</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody id="content-completed" class="tab-content">
+                        <tr>
+                            <td>Sarah Lee</td>
+                            <td>Apr 25, 2026</td>
+                            <td>12:00 PM</td>
+                            <td>3 Guest</td>
+                            <td><span class="badge completed">Completed</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody id="content-cancelled" class="tab-content">
+                        <tr>
+                            <td>Marc Renjo</td>
+                            <td>Apr 25, 2026</td>
+                            <td>8:30 PM</td>
+                            <td>6 Guest</td>
+                            <td><span class="badge cancelled">Cancelled</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody id="content-all" class="tab-content">
+                        <tr>
+                            <td>Juan Dela Cruz</td>
+                            <td>Apr 25, 2026</td>
+                            <td>5:30 PM</td>
+                            <td>4 Guest</td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Lee</td>
+                            <td>Apr 25, 2026</td>
+                            <td>12:00 PM</td>
+                            <td>3 Guest</td>
+                            <td><span class="badge completed">Completed</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Marc Renjo</td>
+                            <td>Apr 25, 2026</td>
+                            <td>8:30 PM</td>
+                            <td>6 Guest</td>
+                            <td><span class="badge cancelled">Cancelled</span></td>
+                            <td><button class="btn-view">🔍 View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="overviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reservations Overview</h3>
+                <button class="btn-close-modal">X</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4>Personal Details</h4>
+                    <div class="grid-3-col">
+                        <div>
+                            <label>Full Name:</label>
+                            <p>Juan Dela Cruz</p>
+                        </div>
+                        <div>
+                            <label>Contact Number:</label>
+                            <p>0917 123 4567</p>
+                        </div>
+                        <div>
+                            <label>Email:</label>
+                            <p>juan@email.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Booking Information</h4>
+                    <div class="grid-3-col">
+                        <div>
+                            <label>Date</label>
+                            <p>Apr 25, 2025</p>
+                        </div>
+                        <div>
+                            <label>Time</label>
+                            <p>5:30 PM</p>
+                        </div>
+                        <div>
+                            <label>Guest</label>
+                            <p>4 Guest</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Special Request</h4>
+                    <p>Window seat near the corner, please. Birthday celebration.</p>
+                </div>
+
+                <div class="modal-status">
+                    <label>Status</label>
+                    <span class="badge pending">Pending</span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-confirm">Confirm Reservation</button>
+                <button class="btn-cancel">Cancel Reservation</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

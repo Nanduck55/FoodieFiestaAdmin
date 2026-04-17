@@ -1,0 +1,400 @@
+/* =========================================
+   BASE STYLES & TYPOGRAPHY
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean sans-serif */
+}
+
+body {
+    background-color: #EBF0F6; /* Light blue-gray background */
+    color: #4A4A4A;
+}
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.sidebar {
+    width: 280px;
+    background-color: #F1E8EB; /* Soft pink background */
+    padding: 20px;
+    border-right: 2px solid #E2D9DC;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.brand-header h1 {
+    color: #C85A32; /* Foodie Fiesta Orange/Red */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.brand-header p {
+    font-size: 0.85rem;
+    color: #6C6C6C;
+    font-weight: 600;
+}
+
+.metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.metric-card {
+    background-color: transparent;
+    padding: 10px 5px;
+    border-radius: 8px;
+}
+
+.metric-card.highlight {
+    background-color: #E2D9DC; /* Slightly darker pink for emphasis */
+    padding: 15px;
+}
+
+.metric-card h3 {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.metric-value {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.metric-value h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.metric-value .icon {
+    font-size: 1.2rem;
+}
+
+.next-reservation {
+    margin-top: 20px;
+    border-top: 1px solid #D1C8CB;
+    padding-top: 20px;
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.content-header h2 {
+    font-size: 1.8rem;
+    color: #3B5368;
+}
+
+.btn-add-reservation {
+    background-color: #2F445C; /* Dark navy blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-add-reservation:hover {
+    background-color: #1F2D3D;
+}
+
+/* =========================================
+   TABS NAVIGATION
+   ========================================= */
+.status-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #E1E6EE;
+    padding: 8px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.tab {
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #6C7A89;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background-color: #E2A169; /* Orange tab */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   DATA TABLE
+   ========================================= */
+.table-container {
+    background-color: #F8FAFC;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #E8DDDA; /* Light tan from wireframe */
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #E1E6EE;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #F1F4F9;
+}
+
+/* Badges & Buttons inside Table */
+.badge.pending {
+    background-color: #F6DFB3;
+    color: #A67C00;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn-view {
+    background-color: #5A82B5; /* Blue button */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+
+.btn-view:hover {
+    background-color: #456A96;
+}
+
+/* =========================================
+   OVERVIEW MODAL
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(200, 205, 215, 0.7); /* Blurred/light overlay */
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex; /* Shown when active class is added via JS */
+}
+
+.modal-content {
+    background-color: #F8FAFC;
+    width: 550px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #CCC;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #E8DDDA;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D1C8CB;
+}
+
+.modal-header h3 {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.modal-section h4 {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.grid-3-col label {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.grid-3-col p {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.modal-section > p {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.modal-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-status label {
+    font-weight: bold;
+    color: #666;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #F1F4F9;
+    border-top: 1px solid #E1E6EE;
+}
+
+.btn-confirm {
+    background-color: #5C9A98; /* Teal */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    background-color: #D68D9A; /* Pinkish red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================================
+   TAB SWITCHING LOGIC & NEW BADGES
+   ========================================= */
+.tab-content {
+    display: none; /* Hide all table bodies by default */
+}
+
+.tab-content.active {
+    display: table-row-group; /* Show only the active table body */
+}
+
+/* Badge Colors */
+.badge.upcoming {
+    background-color: #D4E6F1;
+    color: #2471A3;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge.seated {
+    background-color: #D5F5E3;
+    color: #229954;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge.completed {
+    background-color: #E8F8F5;
+    color: #117A65;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge.cancelled {
+    background-color: #FADBD8;
+    color: #CB4335;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
