@@ -3,15 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean sans-serif */
 }
 
 body {
-    background-color: #EBF0F6; /* Light blue-gray background */
+    background-color: #EBF0F6; 
     color: #4A4A4A;
 }
 
-/* LAYOUT */
+/* LAYOUT*/
 .dashboard-container {
     display: flex;
     height: 100vh;
@@ -21,7 +21,7 @@ body {
 /* SIDEBAR */
 .sidebar {
     width: 280px;
-    background-color: #F1E8EB; /* Soft pink background */
+    background-color: #F1E8EB;
     padding: 20px;
     border-right: 2px solid #E2D9DC;
     display: flex;
@@ -54,7 +54,7 @@ body {
 }
 
 .metric-card.highlight {
-    background-color: #E2D9DC; 
+    background-color: #E2D9DC; /* Slightly darker pink for emphasis */
     padding: 15px;
 }
 
@@ -106,7 +106,7 @@ body {
 }
 
 .btn-add-reservation {
-    background-color: #2F445C; 
+    background-color: #2F445C; /* Dark navy blue */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -216,7 +216,7 @@ tbody tr:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(200, 205, 215, 0.7); /* Blurred/light overlay */
+    background-color: rgba(200, 205, 215, 0.7); 
     display: none; /* Hidden by default */
     align-items: center;
     justify-content: center;
@@ -224,16 +224,19 @@ tbody tr:hover {
 }
 
 .modal-overlay.active {
-    display: flex; /* Shown when active class is added via JS */
+    display: flex; 
 }
 
 .modal-content {
     background-color: #F8FAFC;
     width: 550px;
+    max-height: 90vh; /* Prevents modal from exceeding screen height */
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border: 1px solid #CCC;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Forces header, body, and footer into a stack */
+    overflow: hidden; 
 }
 
 .modal-header {
@@ -260,6 +263,8 @@ tbody tr:hover {
 
 .modal-body {
     padding: 20px;
+    overflow-y: auto; 
+    flex: 1;
 }
 
 .modal-section {
@@ -315,10 +320,11 @@ tbody tr:hover {
     padding: 20px;
     background-color: #F1F4F9;
     border-top: 1px solid #E1E6EE;
+    flex-shrink: 0; 
 }
 
 .btn-confirm {
-    background-color: #5C9A98; /* Teal */
+    background-color: #5C9A98; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -328,7 +334,7 @@ tbody tr:hover {
 }
 
 .btn-cancel {
-    background-color: #D68D9A; /* Pinkish red */
+    background-color: #D68D9A; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -383,6 +389,50 @@ tbody tr:hover {
     font-weight: bold;
 }
 
+/* FORM INPUTS & ADD MODAL SPECIFICS */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D1C8CB;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background-color: #FFF;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #5A82B5;
+    box-shadow: 0 0 5px rgba(90, 130, 181, 0.3);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-submit-reservation {
+    background-color: #2D5A4C; /* Dark green from wireframe */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.btn-submit-reservation:hover {
+    background-color: #1F4035;
+}
+
+.brand-logo{
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
 
 /* RESPONSIVE DESIGN (MOBILE & TABLET) */
 @media (max-width: 768px) {
