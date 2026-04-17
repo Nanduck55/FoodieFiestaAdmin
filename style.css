@@ -1,11 +1,9 @@
-/* =========================================
-   BASE STYLES & TYPOGRAPHY
-   ========================================= */
+/* BASE STYLES & TYPOGRAPHY */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean sans-serif */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 body {
@@ -13,18 +11,14 @@ body {
     color: #4A4A4A;
 }
 
-/* =========================================
-   LAYOUT
-   ========================================= */
+/* LAYOUT */
 .dashboard-container {
     display: flex;
     height: 100vh;
     overflow: hidden;
 }
 
-/* =========================================
-   SIDEBAR
-   ========================================= */
+/* SIDEBAR */
 .sidebar {
     width: 280px;
     background-color: #F1E8EB; /* Soft pink background */
@@ -36,7 +30,7 @@ body {
 }
 
 .brand-header h1 {
-    color: #C85A32; /* Foodie Fiesta Orange/Red */
+    color: #C85A32; 
     font-size: 1.5rem;
     margin-bottom: 5px;
 }
@@ -60,7 +54,7 @@ body {
 }
 
 .metric-card.highlight {
-    background-color: #E2D9DC; /* Slightly darker pink for emphasis */
+    background-color: #E2D9DC; 
     padding: 15px;
 }
 
@@ -92,9 +86,7 @@ body {
     padding-top: 20px;
 }
 
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
+/* MAIN CONTENT */
 .main-content {
     flex: 1;
     padding: 40px;
@@ -114,7 +106,7 @@ body {
 }
 
 .btn-add-reservation {
-    background-color: #2F445C; /* Dark navy blue */
+    background-color: #2F445C; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -128,9 +120,7 @@ body {
     background-color: #1F2D3D;
 }
 
-/* =========================================
-   TABS NAVIGATION
-   ========================================= */
+/* TABS NAVIGATION */
 .status-tabs {
     display: flex;
     gap: 10px;
@@ -158,9 +148,7 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* =========================================
-   DATA TABLE
-   ========================================= */
+/* DATA TABLE */
 .table-container {
     background-color: #F8FAFC;
     border-radius: 12px;
@@ -221,9 +209,7 @@ tbody tr:hover {
     background-color: #456A96;
 }
 
-/* =========================================
-   OVERVIEW MODAL
-   ========================================= */
+/* OVERVIEW MODAL */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -351,15 +337,13 @@ tbody tr:hover {
     font-weight: bold;
 }
 
-/* =========================================
-   TAB SWITCHING LOGIC & NEW BADGES
-   ========================================= */
+/* TAB SWITCHING LOGIC & NEW BADGES */
 .tab-content {
-    display: none; /* Hide all table bodies by default */
+    display: none; 
 }
 
 .tab-content.active {
-    display: table-row-group; /* Show only the active table body */
+    display: table-row-group; 
 }
 
 /* Badge Colors */
@@ -397,4 +381,46 @@ tbody tr:hover {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+
+/* RESPONSIVE DESIGN (MOBILE & TABLET) */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #E2D9DC;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    
+    .status-tabs {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    
+    .table-container {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+   
+    .grid-3-col {
+        grid-template-columns: 1fr;
+    }
 }
